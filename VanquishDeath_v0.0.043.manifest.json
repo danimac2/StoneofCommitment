@@ -1,0 +1,3833 @@
+{
+  "manifest_version": 1,
+  "build": {
+    "story_name": "VanquishDeath_v0.0.043",
+    "soc_version": "v0.0.043",
+    "ifid": "8E5C4A1F-3B2D-4F8E-9C6A-7D2E1B5F0A98",
+    "format": "SugarCube 2.37.3",
+    "compiler": "Tweego 2.1.1+81d1d71",
+    "start_passage": "LS.010_LoadScreen",
+    "build_hash": "65478658d792fcd3",
+    "source_file": "vd043.html"
+  },
+  "telemetry": {
+    "endpoint_default": "https://fvybhcyzqjjjivzhhceq.supabase.co/functions/v1/telemetry",
+    "watched_stats": [
+      "fangTrust",
+      "ishaniClareBond",
+      "minjaeTrust",
+      "lawrenceFirstRead",
+      "playerDesire",
+      "minjaeVector",
+      "heartbeatCount"
+    ],
+    "sugarcube_events_hooked": [
+      ":passagedisplay",
+      ":passageend",
+      ":passagerender",
+      ":passagestart",
+      ":storyready"
+    ],
+    "events_from_javascript": {
+      "banner_shown": 1,
+      "begin_new_journey_clicked": 1,
+      "chapterend_continue": 1,
+      "chapterend_credits": 1,
+      "chapterend_hub": 1,
+      "chase_choice": 1,
+      "chase_reveal": 1,
+      "chasechoice_set": 1,
+      "chemistry_beat": 1,
+      "choice_presented": 1,
+      "choice_selected": 1,
+      "combat_action_chosen": 1,
+      "consent_moment": 2,
+      "dialogue_advance": 1,
+      "feedback_submitted": 1,
+      "guild_response_fired": 1,
+      "heartbeat_triggered": 1,
+      "hub_continue": 1,
+      "hub_exit_game": 1,
+      "hub_journal_opened": 1,
+      "journal_toggle": 1,
+      "journey_row_clicked": 2,
+      "journey_row_expanded": 1,
+      "journeys_grid_closed": 1,
+      "limit_break_fired": 1,
+      "loader_ready": 1,
+      "loader_review_journal": 1,
+      "lockbreak": 1,
+      "notebook_continue": 1,
+      "notebook_new_clicked": 2,
+      "party_join": 1,
+      "save_created": 2,
+      "save_evicted": 2,
+      "session_abandon": 2,
+      "session_resume": 1,
+      "session_resume_failed": 1,
+      "session_start": 1,
+      "stance_choice": 1,
+      "stance_reveal": 1,
+      "stat_changed": 1,
+      "surface_unlock": 2,
+      "vetting_pass_button_shown": 1,
+      "vetting_resolve": 2,
+      "vetting_start": 1,
+      "vetting_turn": 2,
+      "whisper_response_fired": 1,
+      "whisper_subtab_switched": 1,
+      "{surface}_defer": 1,
+      "{surface}_reply": 1,
+      "{surface}_response_queued": 1
+    },
+    "events_from_passages": {
+      "credits_replay": 1,
+      "desire_finish": 1,
+      "desire_matter": 1,
+      "desire_refused": 1,
+      "desire_safe": 1,
+      "hub_rest": 1,
+      "kitchen_continue": 1,
+      "loader_begin": 4,
+      "loader_jump": 8,
+      "scene_enter": 35,
+      "session_complete": 1,
+      "vd_begin": 1
+    }
+  },
+  "counts": {
+    "passages": 46,
+    "cinematic_passages": 8,
+    "choice_points": 20,
+    "consent_moments": 5,
+    "variables": 99,
+    "macros_defined": 61
+  },
+  "choice_points": [
+    {
+      "macro": "stancechoice",
+      "group": "vd010",
+      "stance": "follow",
+      "label": "Follow Fang’s lead. Watch what she’s watching.",
+      "target": "VD.022.outside_smyrna.raid.watch",
+      "passage": "VD.010.outside_smyrna.raid.road"
+    },
+    {
+      "macro": "stancechoice",
+      "group": "vd010",
+      "stance": "halt",
+      "label": "Don’t wait to find out. Signal a halt.",
+      "target": "VD.025.outside_smyrna.raid.halt",
+      "passage": "VD.010.outside_smyrna.raid.road"
+    },
+    {
+      "macro": "stancechoice",
+      "group": "vd010",
+      "stance": "close",
+      "label": "Keep them moving, close ranks. Signal Berke to tighten the line.",
+      "target": "VD.020.outside_smyrna.raid.scent2",
+      "passage": "VD.010.outside_smyrna.raid.road"
+    },
+    {
+      "macro": "chasechoice",
+      "style": "aggressive",
+      "stat": "dex",
+      "label": "Turn and slow them down yourself. Buy Fang the lead.",
+      "target": "VD.140.smyrna.chase.b4",
+      "in_place": false,
+      "passage": "VD.110.smyrna.chase.b1"
+    },
+    {
+      "macro": "chasechoice",
+      "style": "tactical",
+      "stat": "flow",
+      "label": "Overturn a stall behind you. Make them go around.",
+      "target": "VD.140.smyrna.chase.b4",
+      "in_place": false,
+      "passage": "VD.110.smyrna.chase.b1"
+    },
+    {
+      "macro": "chasechoice",
+      "style": "trickster",
+      "stat": "end",
+      "label": "Duck through the tannery&rsquo;s side door and lose them in the yards.",
+      "target": "VD.140.smyrna.chase.b4",
+      "in_place": false,
+      "passage": "VD.110.smyrna.chase.b1"
+    },
+    {
+      "macro": "chasechoice",
+      "style": "aggressive",
+      "stat": "",
+      "label": "\"I had your back. You had mine.\"",
+      "target": "VD.213.mostor.entrance.fang_ack_reciprocate",
+      "in_place": false,
+      "passage": "VD.212.mostor.entrance.fang_ack"
+    },
+    {
+      "macro": "chasechoice",
+      "style": "tactical",
+      "stat": "",
+      "label": "\"...Yeah. Let’s keep moving.\"",
+      "target": "VD.214.mostor.entrance.fang_ack_deflect",
+      "in_place": false,
+      "passage": "VD.212.mostor.entrance.fang_ack"
+    },
+    {
+      "macro": "chasechoice",
+      "style": "trickster",
+      "stat": "",
+      "label": "\"Don't make it a thing.\"",
+      "target": "VD.215.mostor.entrance.fang_ack_decline",
+      "in_place": false,
+      "passage": "VD.212.mostor.entrance.fang_ack"
+    },
+    {
+      "macro": "chasechoice",
+      "style": "aggressive",
+      "stat": "",
+      "label": "\"That's not an answer.\"",
+      "target": "VD.251.mostor.main.unfinished_press",
+      "in_place": false,
+      "passage": "VD.250.mostor.main.unfinished"
+    },
+    {
+      "macro": "chasechoice",
+      "style": "tactical",
+      "stat": "",
+      "label": "(nod. don't press. drink the tea.)",
+      "target": "VD.260.mostor.main.lawrence_arrives",
+      "in_place": false,
+      "passage": "VD.250.mostor.main.unfinished"
+    },
+    {
+      "macro": "chasechoice",
+      "style": "trickster",
+      "stat": "",
+      "label": "(nice weather, isn't it, Fang?)",
+      "target": "VD.252.mostor.main.unfinished_name",
+      "in_place": false,
+      "passage": "VD.250.mostor.main.unfinished"
+    },
+    {
+      "macro": "chasechoice",
+      "style": "protective",
+      "stat": "flow",
+      "label": "Tell her. Now.",
+      "target": null,
+      "in_place": true,
+      "passage": "VD.022.outside_smyrna.raid.watch"
+    },
+    {
+      "macro": "chasechoice",
+      "style": "tactical",
+      "stat": "flow",
+      "label": "Keep watching. She gave you the rock; give her the slope.",
+      "target": null,
+      "in_place": true,
+      "passage": "VD.022.outside_smyrna.raid.watch"
+    },
+    {
+      "macro": "chasechoice",
+      "style": "trickster",
+      "stat": "flow",
+      "label": "Test him. Let your hand drift to your blade and see if he reacts.",
+      "target": null,
+      "in_place": true,
+      "passage": "VD.022.outside_smyrna.raid.watch"
+    },
+    {
+      "macro": "chasechoice",
+      "style": "protective",
+      "stat": "flow",
+      "label": "Stand with the animals. The herders are the ones who cannot fight.",
+      "target": null,
+      "in_place": true,
+      "passage": "VD.025.outside_smyrna.raid.halt"
+    },
+    {
+      "macro": "chasechoice",
+      "style": "tactical",
+      "stat": "flow",
+      "label": "Get back to Fang. She saw it first; she will see it coming.",
+      "target": null,
+      "in_place": true,
+      "passage": "VD.025.outside_smyrna.raid.halt"
+    },
+    {
+      "macro": "chasechoice",
+      "style": "trickster",
+      "stat": "flow",
+      "label": "Find scree. If it comes, you want something to throw before it reaches you.",
+      "target": null,
+      "in_place": true,
+      "passage": "VD.025.outside_smyrna.raid.halt"
+    },
+    {
+      "macro": "chasechoice",
+      "style": "tactical+trickster",
+      "stat": "flow",
+      "label": "Reach for the scree. Put the camel between the vampire and the merchant.",
+      "target": null,
+      "in_place": true,
+      "passage": "VD.045.outside_smyrna.raid.spark"
+    },
+    {
+      "macro": "chasechoice",
+      "style": "protective",
+      "stat": "flow",
+      "label": "Get your body between the merchant and the vampire.",
+      "target": null,
+      "in_place": true,
+      "passage": "VD.045.outside_smyrna.raid.spark"
+    }
+  ],
+  "consent_moments": [
+    {
+      "id": "PostChase_reciprocate",
+      "stat": "fangTrust",
+      "delta": "5",
+      "chat_register": "Fang said I held. I told her we had each other’s backs.",
+      "offered": [
+        "i had your back, you had mine",
+        "keep moving",
+        "don’t make it a thing"
+      ],
+      "chosen": "i had your back, you had mine",
+      "passage": "VD.213.mostor.entrance.fang_ack_reciprocate"
+    },
+    {
+      "id": "PostChase_deflect",
+      "stat": "fangTrust",
+      "delta": "0",
+      "chat_register": "Fang said I held. I said yeah, and kept us moving.",
+      "offered": [
+        "i had your back, you had mine",
+        "keep moving",
+        "don’t make it a thing"
+      ],
+      "chosen": "keep moving",
+      "passage": "VD.214.mostor.entrance.fang_ack_deflect"
+    },
+    {
+      "id": "PostChase_decline",
+      "stat": "fangTrust",
+      "delta": "-5",
+      "chat_register": "Fang said I held. I told her not to make it a thing.",
+      "offered": [
+        "i had your back, you had mine",
+        "keep moving",
+        "don’t make it a thing"
+      ],
+      "chosen": "don’t make it a thing",
+      "passage": "VD.215.mostor.entrance.fang_ack_decline"
+    },
+    {
+      "id": "MoStor_press",
+      "stat": "fangTrust",
+      "delta": "0",
+      "chat_register": "Fang gave me an unfinished sentence. I told her it wasn't enough.",
+      "offered": [
+        "that’s not an answer",
+        "drink the tea, don’t press",
+        "you don’t have to tell me"
+      ],
+      "chosen": "that’s not an answer",
+      "passage": "VD.251.mostor.main.unfinished_press"
+    },
+    {
+      "id": "MoStor_name",
+      "stat": "fangTrust",
+      "delta": "10",
+      "chat_register": "Fang gave me an unfinished sentence. I told her she didn't have to finish it.",
+      "offered": [
+        "that’s not an answer",
+        "drink the tea, don’t press",
+        "you don’t have to tell me"
+      ],
+      "chosen": "you don’t have to tell me",
+      "passage": "VD.252.mostor.main.unfinished_name"
+    }
+  ],
+  "variables": [
+    {
+      "name": "D4_firstKill",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "R1_baited",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "R1_capitanHeld",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "R1_captainAnsweredR1",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "R1_castNet",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit",
+        "VD.999.credits.end.main"
+      ]
+    },
+    {
+      "name": "R1_castYardarm",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit",
+        "VD.999.credits.end.main"
+      ]
+    },
+    {
+      "name": "R1_cutThrough",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "R1_spoke",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit",
+        "VD.999.credits.end.main"
+      ]
+    },
+    {
+      "name": "R1_struckChanter",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit",
+        "VD.999.credits.end.main"
+      ]
+    },
+    {
+      "name": "R2_disabled",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "R2_named",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "R2_pressedChanter",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "R2_stepBack",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit",
+        "VD.999.credits.end.main"
+      ]
+    },
+    {
+      "name": "R3_killedCaptain",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "R3_standDown",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit",
+        "VD.999.credits.end.main"
+      ]
+    },
+    {
+      "name": "R3_walkThrough",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "_guildReplyPending",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "_lastChipAnswerTurn",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "_sceneActors",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "_sceneQueue",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "_sceneRevealTarget",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit",
+        "VD.010.outside_smyrna.raid.road"
+      ],
+      "read_in": [
+        "StoryInit",
+        "VD.010.outside_smyrna.raid.road"
+      ]
+    },
+    {
+      "name": "_sceneRevealed",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "_whisperActiveThread",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "_whisperClusterQueue",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "_whisperReplyPending",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "_whisperReplyThread",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "activeChatTab",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "arrivedB3Via",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "avatarKey",
+      "declared_in_storyinit": false,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "LS.010_LoadScreen"
+      ],
+      "read_in": [
+        "LS.010_LoadScreen"
+      ]
+    },
+    {
+      "name": "avatarName",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit",
+        "VD.000.vd_loadscreen",
+        "VD.010.outside_smyrna.raid.road",
+        "VD.022.outside_smyrna.raid.watch",
+        "VD.025.outside_smyrna.raid.halt",
+        "VD.030.outside_smyrna.raid.crest",
+        "VD.045.outside_smyrna.raid.spark",
+        "VD.050.outside_smyrna.raid.merchant",
+        "VD.105.smyrna.han_departure.leaving",
+        "VD.110.smyrna.chase.b1",
+        "VD.140.smyrna.chase.b4",
+        "VD.150.smyrna.chase.b5",
+        "VD.170.smyrna.chase.b7",
+        "VD.200.mostor.mostorThreshold.enter",
+        "VD.210.mostor.entrance.descent",
+        "VD.230.mostor.main.tea",
+        "VD.240.mostor.main.wait",
+        "VD.251.mostor.main.unfinished_press",
+        "VD.252.mostor.main.unfinished_name",
+        "VD.900.mostor.hub.main"
+      ]
+    },
+    {
+      "name": "buildScope",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "captainAlive",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "captainR3Response",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "castMelons",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit",
+        "VD.210.mostor.entrance.descent"
+      ]
+    },
+    {
+      "name": "chantBeat",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "chantInterruptCount",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "chase",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "chatLog",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "chatMode",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "chatModeManual",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "chatRoster",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "chatTutorialShown",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "clareLate",
+      "declared_in_storyinit": false,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "VD.000.vd_loadscreen",
+        "VD.010.outside_smyrna.raid.road"
+      ],
+      "read_in": [
+        "VD.000.vd_loadscreen",
+        "VD.010.outside_smyrna.raid.road"
+      ]
+    },
+    {
+      "name": "clareNo",
+      "declared_in_storyinit": false,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "VD.000.vd_loadscreen"
+      ],
+      "read_in": [
+        "VD.000.vd_loadscreen"
+      ]
+    },
+    {
+      "name": "clareYes",
+      "declared_in_storyinit": false,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "VD.000.vd_loadscreen"
+      ],
+      "read_in": [
+        "VD.000.vd_loadscreen"
+      ]
+    },
+    {
+      "name": "declaredIntents",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "dex",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "dockPrimary",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "dockSpent",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "encounterOutcomes",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "end",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "fang",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "fangTrust",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": true,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit",
+        "VD.210.mostor.entrance.descent"
+      ]
+    },
+    {
+      "name": "flow",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "fortuneCast",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "fortuneVIT",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit",
+        "VD.210.mostor.entrance.descent"
+      ],
+      "read_in": [
+        "StoryInit",
+        "VD.210.mostor.entrance.descent"
+      ]
+    },
+    {
+      "name": "haltPost",
+      "declared_in_storyinit": false,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "VD.025.outside_smyrna.raid.halt"
+      ],
+      "read_in": [
+        "VD.025.outside_smyrna.raid.halt"
+      ]
+    },
+    {
+      "name": "heartbeatCount",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": true,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "hubFrom",
+      "declared_in_storyinit": false,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "VD.000.vd_loadscreen",
+        "VD.900.mostor.hub.main"
+      ],
+      "read_in": [
+        "VD.000.vd_loadscreen",
+        "VD.900.mostor.hub.main"
+      ]
+    },
+    {
+      "name": "intentLog",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "ishaniClareBond",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": true,
+      "written_in": [
+        "StoryInit",
+        "VD.110.smyrna.chase.b1"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "ishaniFangBond",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "ishaniJeffBond",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "ishaniMinjaeBond",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit",
+        "VD.110.smyrna.chase.b1",
+        "VD.250.mostor.main.unfinished"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "journal",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "journalLog",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "lastChapterComplete",
+      "declared_in_storyinit": false,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "VD.100.ishani_apartment.kitchen.reveal"
+      ],
+      "read_in": [
+        "VD.100.ishani_apartment.kitchen.reveal"
+      ]
+    },
+    {
+      "name": "lawrence",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "lawrenceFirstRead",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": true,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "lawrenceTrust",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "minjaeTrust",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": true,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "minjaeVector",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": true,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "moStorEntered",
+      "declared_in_storyinit": false,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "VD.100.ishani_apartment.kitchen.reveal",
+        "VD.200.mostor.mostorThreshold.enter",
+        "VD.210.mostor.entrance.descent"
+      ],
+      "read_in": [
+        "VD.100.ishani_apartment.kitchen.reveal",
+        "VD.200.mostor.mostorThreshold.enter",
+        "VD.210.mostor.entrance.descent"
+      ]
+    },
+    {
+      "name": "moStorMode",
+      "declared_in_storyinit": false,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "VD.200.mostor.mostorThreshold.enter"
+      ],
+      "read_in": [
+        "VD.200.mostor.mostorThreshold.enter"
+      ]
+    },
+    {
+      "name": "moStorTeaSeen",
+      "declared_in_storyinit": false,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "VD.230.mostor.main.tea",
+        "VD.900.mostor.hub.main"
+      ],
+      "read_in": [
+        "VD.230.mostor.main.tea",
+        "VD.900.mostor.hub.main"
+      ]
+    },
+    {
+      "name": "momentsThatMattered",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "muscleAlive",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "muscleInFormation",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "muttererHP",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "nonviolentLock",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "npcsMet",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "partyJoined",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "pendingWhispers",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "playerDesire",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": true,
+      "written_in": [
+        "LS.010_LoadScreen",
+        "StoryInit"
+      ],
+      "read_in": [
+        "LS.010_LoadScreen",
+        "StoryInit",
+        "VD.999.credits.end.main"
+      ]
+    },
+    {
+      "name": "portraits",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "raidCall",
+      "declared_in_storyinit": false,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "VD.020.outside_smyrna.raid.scent2",
+        "VD.022.outside_smyrna.raid.watch",
+        "VD.025.outside_smyrna.raid.halt"
+      ],
+      "read_in": [
+        "VD.020.outside_smyrna.raid.scent2",
+        "VD.022.outside_smyrna.raid.watch",
+        "VD.025.outside_smyrna.raid.halt",
+        "VD.030.outside_smyrna.raid.crest"
+      ]
+    },
+    {
+      "name": "sawFigure",
+      "declared_in_storyinit": false,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "VD.022.outside_smyrna.raid.watch"
+      ],
+      "read_in": [
+        "VD.022.outside_smyrna.raid.watch"
+      ]
+    },
+    {
+      "name": "signalAlive",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "signalInFormation",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "tabUnread",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "tableSurfaces",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "testedFigure",
+      "declared_in_storyinit": false,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "VD.022.outside_smyrna.raid.watch"
+      ],
+      "read_in": [
+        "VD.022.outside_smyrna.raid.watch"
+      ]
+    },
+    {
+      "name": "tibTellCount",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "toldFang",
+      "declared_in_storyinit": false,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "VD.022.outside_smyrna.raid.watch"
+      ],
+      "read_in": [
+        "VD.022.outside_smyrna.raid.watch"
+      ]
+    },
+    {
+      "name": "trickster_stepback",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit",
+        "VD.999.credits.end.main"
+      ]
+    },
+    {
+      "name": "vowBroken",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "whisperLog",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "whisperTutorialShown",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    },
+    {
+      "name": "xp",
+      "declared_in_storyinit": true,
+      "watched_by_telemetry": false,
+      "written_in": [
+        "StoryInit"
+      ],
+      "read_in": [
+        "StoryInit"
+      ]
+    }
+  ],
+  "macros_defined": [
+    "addactor",
+    "advance",
+    "artprompt",
+    "chapterend",
+    "chasechoice",
+    "chatbeat",
+    "chatpush",
+    "chatpushlong",
+    "chatquiet",
+    "chemistrybeat",
+    "chipswap",
+    "combatevent",
+    "combatinit",
+    "combatturn",
+    "consentmoment",
+    "consumeintent",
+    "declareintent",
+    "deflectintent",
+    "dlg",
+    "dockbreakvow",
+    "dockmenu",
+    "dockresolve",
+    "dockstage",
+    "dvstats",
+    "fadeoutactors",
+    "glimpse",
+    "guildpost",
+    "guildreply",
+    "heartbeat",
+    "hubexit",
+    "journal",
+    "journalentry",
+    "limitbreak",
+    "moveactor",
+    "music",
+    "musictransition",
+    "npcintro",
+    "onering",
+    "partyjoin",
+    "resolveintent",
+    "sceneadvance",
+    "sceneprose",
+    "setactors",
+    "setchasedetail",
+    "setchat",
+    "setheader",
+    "setlocation",
+    "setoverlay",
+    "setscene",
+    "settab",
+    "shake",
+    "socexitsurvey",
+    "soctrack",
+    "soundprompt",
+    "stancechoice",
+    "swapactor",
+    "trustvetting",
+    "unlocksurface",
+    "whisper",
+    "whisperafter",
+    "whisperreply"
+  ],
+  "passages": [
+    {
+      "pid": 1,
+      "name": "VD.010.outside_smyrna.raid.road",
+      "tags": [
+        "nobr"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 5353,
+      "embedded_media": 0,
+      "links_out": [
+        "VD.020.outside_smyrna.raid.scent2",
+        "VD.022.outside_smyrna.raid.watch",
+        "VD.025.outside_smyrna.raid.halt"
+      ],
+      "macros": {
+        "sceneprose": 7,
+        "stancechoice": 3,
+        "set": 2,
+        "setchat": 1,
+        "if": 1,
+        "guildreply": 1,
+        "setheader": 1,
+        "setscene": 1,
+        "music": 1,
+        "setactors": 1,
+        "advance": 1
+      },
+      "soctrack": [],
+      "choice_points": [
+        {
+          "macro": "stancechoice",
+          "group": "vd010",
+          "stance": "follow",
+          "label": "Follow Fang’s lead. Watch what she’s watching.",
+          "target": "VD.022.outside_smyrna.raid.watch"
+        },
+        {
+          "macro": "stancechoice",
+          "group": "vd010",
+          "stance": "halt",
+          "label": "Don’t wait to find out. Signal a halt.",
+          "target": "VD.025.outside_smyrna.raid.halt"
+        },
+        {
+          "macro": "stancechoice",
+          "group": "vd010",
+          "stance": "close",
+          "label": "Keep them moving, close ranks. Signal Berke to tighten the line.",
+          "target": "VD.020.outside_smyrna.raid.scent2"
+        }
+      ],
+      "consent_moments": [],
+      "music_cues": [
+        [
+          "",
+          ""
+        ]
+      ],
+      "links_in": [
+        "LS.010_LoadScreen",
+        "VD.000.vd_loadscreen",
+        "VD.900.mostor.hub.main"
+      ]
+    },
+    {
+      "pid": 2,
+      "name": "VD.105.smyrna.han_departure.leaving",
+      "tags": [
+        "nobr"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 2421,
+      "embedded_media": 0,
+      "links_out": [
+        "VD.110.smyrna.chase.b1"
+      ],
+      "macros": {
+        "sceneprose": 14,
+        "setchat": 1,
+        "setheader": 1,
+        "setscene": 1,
+        "soctrack": 1,
+        "music": 1,
+        "advance": 1
+      },
+      "soctrack": [
+        {
+          "event": "scene_enter",
+          "detail": "VD.105.smyrna.han_departure.leaving"
+        }
+      ],
+      "choice_points": [],
+      "consent_moments": [],
+      "music_cues": [
+        [
+          "Nella Notte",
+          "Forestella · acoustic (placeholder; Han cue TBD)"
+        ]
+      ],
+      "links_in": [
+        "LS.010_LoadScreen",
+        "VD.100.ishani_apartment.kitchen.reveal"
+      ]
+    },
+    {
+      "pid": 3,
+      "name": "VD.110.smyrna.chase.b1",
+      "tags": [
+        "nobr"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 8433,
+      "embedded_media": 0,
+      "links_out": [
+        "VD.140.smyrna.chase.b4"
+      ],
+      "macros": {
+        "sceneprose": 5,
+        "chatpush": 4,
+        "chasechoice": 3,
+        "setchat": 1,
+        "setheader": 1,
+        "setscene": 1,
+        "setactors": 1,
+        "soctrack": 1,
+        "music": 1,
+        "guildreply": 1,
+        "whisper": 1,
+        "whisperreply": 1,
+        "artprompt": 1,
+        "soundprompt": 1
+      },
+      "soctrack": [
+        {
+          "event": "scene_enter",
+          "detail": "VD.110.smyrna.chase.b1"
+        }
+      ],
+      "choice_points": [
+        {
+          "macro": "chasechoice",
+          "style": "aggressive",
+          "stat": "dex",
+          "label": "Turn and slow them down yourself. Buy Fang the lead.",
+          "target": "VD.140.smyrna.chase.b4",
+          "in_place": false
+        },
+        {
+          "macro": "chasechoice",
+          "style": "tactical",
+          "stat": "flow",
+          "label": "Overturn a stall behind you. Make them go around.",
+          "target": "VD.140.smyrna.chase.b4",
+          "in_place": false
+        },
+        {
+          "macro": "chasechoice",
+          "style": "trickster",
+          "stat": "end",
+          "label": "Duck through the tannery&rsquo;s side door and lose them in the yards.",
+          "target": "VD.140.smyrna.chase.b4",
+          "in_place": false
+        }
+      ],
+      "consent_moments": [],
+      "music_cues": [
+        [
+          "Legacy",
+          "NEXZ"
+        ]
+      ],
+      "links_in": [
+        "VD.105.smyrna.han_departure.leaving"
+      ]
+    },
+    {
+      "pid": 4,
+      "name": "VD.130.smyrna.chase.b3",
+      "tags": [
+        "nobr"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 1085,
+      "embedded_media": 0,
+      "links_out": [
+        "VD.140.smyrna.chase.b4"
+      ],
+      "macros": {
+        "sceneprose": 4,
+        "setheader": 1,
+        "setscene": 1,
+        "soctrack": 1,
+        "advance": 1
+      },
+      "soctrack": [
+        {
+          "event": "scene_enter",
+          "detail": "VD.130.smyrna.chase.b3"
+        }
+      ],
+      "choice_points": [],
+      "consent_moments": [],
+      "music_cues": [],
+      "links_in": []
+    },
+    {
+      "pid": 5,
+      "name": "VD.140.smyrna.chase.b4",
+      "tags": [
+        "nobr"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 1090,
+      "embedded_media": 0,
+      "links_out": [
+        "VD.150.smyrna.chase.b5"
+      ],
+      "macros": {
+        "sceneprose": 5,
+        "setheader": 1,
+        "setscene": 1,
+        "soctrack": 1,
+        "advance": 1
+      },
+      "soctrack": [
+        {
+          "event": "scene_enter",
+          "detail": "VD.140.smyrna.chase.b4"
+        }
+      ],
+      "choice_points": [],
+      "consent_moments": [],
+      "music_cues": [],
+      "links_in": [
+        "VD.110.smyrna.chase.b1",
+        "VD.130.smyrna.chase.b3"
+      ]
+    },
+    {
+      "pid": 6,
+      "name": "VD.150.smyrna.chase.b5",
+      "tags": [
+        "nobr"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 1819,
+      "embedded_media": 0,
+      "links_out": [
+        "VD.160.smyrna.chase.b6_withdraw"
+      ],
+      "macros": {
+        "sceneprose": 11,
+        "setheader": 1,
+        "setscene": 1,
+        "music": 1,
+        "soctrack": 1,
+        "advance": 1
+      },
+      "soctrack": [
+        {
+          "event": "scene_enter",
+          "detail": "VD.150.smyrna.chase.b5"
+        }
+      ],
+      "choice_points": [],
+      "consent_moments": [],
+      "music_cues": [
+        [
+          "Heartbeat",
+          "2PM"
+        ]
+      ],
+      "links_in": [
+        "VD.140.smyrna.chase.b4"
+      ]
+    },
+    {
+      "pid": 7,
+      "name": "VD.160.smyrna.chase.b6_withdraw",
+      "tags": [
+        "nobr"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 1160,
+      "embedded_media": 0,
+      "links_out": [
+        "VD.170.smyrna.chase.b7"
+      ],
+      "macros": {
+        "sceneprose": 4,
+        "setheader": 1,
+        "setscene": 1,
+        "soctrack": 1,
+        "advance": 1
+      },
+      "soctrack": [
+        {
+          "event": "scene_enter",
+          "detail": "VD.160.smyrna.chase.b6_withdraw"
+        }
+      ],
+      "choice_points": [],
+      "consent_moments": [],
+      "music_cues": [],
+      "links_in": [
+        "VD.150.smyrna.chase.b5"
+      ]
+    },
+    {
+      "pid": 8,
+      "name": "VD.170.smyrna.chase.b7",
+      "tags": [
+        "nobr"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 1636,
+      "embedded_media": 0,
+      "links_out": [
+        "VD.210.mostor.entrance.descent"
+      ],
+      "macros": {
+        "sceneprose": 8,
+        "setheader": 1,
+        "setscene": 1,
+        "soctrack": 1,
+        "declareintent": 1,
+        "journalentry": 1,
+        "advance": 1
+      },
+      "soctrack": [
+        {
+          "event": "scene_enter",
+          "detail": "VD.170.smyrna.chase.b7"
+        }
+      ],
+      "choice_points": [],
+      "consent_moments": [],
+      "music_cues": [],
+      "links_in": [
+        "VD.160.smyrna.chase.b6_withdraw"
+      ]
+    },
+    {
+      "pid": 9,
+      "name": "VD.210.mostor.entrance.descent",
+      "tags": [
+        "nobr"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 2744,
+      "embedded_media": 0,
+      "links_out": [
+        "VD.212.mostor.entrance.fang_ack",
+        "VD.220.mostor.main.arrival"
+      ],
+      "macros": {
+        "sceneprose": 10,
+        "if": 3,
+        "set": 2,
+        "advance": 2,
+        "setchat": 1,
+        "setheader": 1,
+        "setscene": 1,
+        "setactors": 1,
+        "setoverlay": 1,
+        "soctrack": 1,
+        "soundprompt": 1,
+        "music": 1,
+        "journalentry": 1,
+        "else": 1
+      },
+      "soctrack": [
+        {
+          "event": "scene_enter",
+          "detail": "VD.210.mostor.entrance.descent"
+        }
+      ],
+      "choice_points": [],
+      "consent_moments": [],
+      "music_cues": [
+        [
+          "Heartbeat",
+          "2PM · continues"
+        ]
+      ],
+      "links_in": [
+        "LS.010_LoadScreen",
+        "VD.170.smyrna.chase.b7"
+      ]
+    },
+    {
+      "pid": 10,
+      "name": "VD.212.mostor.entrance.fang_ack",
+      "tags": [
+        "nobr"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 1101,
+      "embedded_media": 0,
+      "links_out": [
+        "VD.213.mostor.entrance.fang_ack_reciprocate",
+        "VD.214.mostor.entrance.fang_ack_deflect",
+        "VD.215.mostor.entrance.fang_ack_decline"
+      ],
+      "macros": {
+        "chasechoice": 3,
+        "sceneprose": 2,
+        "setchat": 1,
+        "setheader": 1,
+        "setscene": 1,
+        "setactors": 1,
+        "setoverlay": 1,
+        "soctrack": 1
+      },
+      "soctrack": [
+        {
+          "event": "scene_enter",
+          "detail": "PostChase_FangAck"
+        }
+      ],
+      "choice_points": [
+        {
+          "macro": "chasechoice",
+          "style": "aggressive",
+          "stat": "",
+          "label": "\"I had your back. You had mine.\"",
+          "target": "VD.213.mostor.entrance.fang_ack_reciprocate",
+          "in_place": false
+        },
+        {
+          "macro": "chasechoice",
+          "style": "tactical",
+          "stat": "",
+          "label": "\"...Yeah. Let’s keep moving.\"",
+          "target": "VD.214.mostor.entrance.fang_ack_deflect",
+          "in_place": false
+        },
+        {
+          "macro": "chasechoice",
+          "style": "trickster",
+          "stat": "",
+          "label": "\"Don't make it a thing.\"",
+          "target": "VD.215.mostor.entrance.fang_ack_decline",
+          "in_place": false
+        }
+      ],
+      "consent_moments": [],
+      "music_cues": [],
+      "links_in": [
+        "VD.210.mostor.entrance.descent"
+      ]
+    },
+    {
+      "pid": 11,
+      "name": "VD.213.mostor.entrance.fang_ack_reciprocate",
+      "tags": [
+        "nobr"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 736,
+      "embedded_media": 0,
+      "links_out": [
+        "VD.220.mostor.main.arrival"
+      ],
+      "macros": {
+        "setchat": 1,
+        "setheader": 1,
+        "setscene": 1,
+        "setactors": 1,
+        "setoverlay": 1,
+        "consentmoment": 1,
+        "advance": 1
+      },
+      "soctrack": [],
+      "choice_points": [],
+      "consent_moments": [
+        {
+          "id": "PostChase_reciprocate",
+          "stat": "fangTrust",
+          "delta": "5",
+          "chat_register": "Fang said I held. I told her we had each other’s backs.",
+          "offered": [
+            "i had your back, you had mine",
+            "keep moving",
+            "don’t make it a thing"
+          ],
+          "chosen": "i had your back, you had mine"
+        }
+      ],
+      "music_cues": [],
+      "links_in": [
+        "VD.212.mostor.entrance.fang_ack"
+      ]
+    },
+    {
+      "pid": 12,
+      "name": "VD.214.mostor.entrance.fang_ack_deflect",
+      "tags": [
+        "nobr"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 694,
+      "embedded_media": 0,
+      "links_out": [
+        "VD.220.mostor.main.arrival"
+      ],
+      "macros": {
+        "setchat": 1,
+        "setheader": 1,
+        "setscene": 1,
+        "setactors": 1,
+        "setoverlay": 1,
+        "consentmoment": 1,
+        "advance": 1
+      },
+      "soctrack": [],
+      "choice_points": [],
+      "consent_moments": [
+        {
+          "id": "PostChase_deflect",
+          "stat": "fangTrust",
+          "delta": "0",
+          "chat_register": "Fang said I held. I said yeah, and kept us moving.",
+          "offered": [
+            "i had your back, you had mine",
+            "keep moving",
+            "don’t make it a thing"
+          ],
+          "chosen": "keep moving"
+        }
+      ],
+      "music_cues": [],
+      "links_in": [
+        "VD.212.mostor.entrance.fang_ack"
+      ]
+    },
+    {
+      "pid": 13,
+      "name": "VD.215.mostor.entrance.fang_ack_decline",
+      "tags": [
+        "nobr"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 747,
+      "embedded_media": 0,
+      "links_out": [
+        "VD.220.mostor.main.arrival"
+      ],
+      "macros": {
+        "setchat": 1,
+        "setheader": 1,
+        "setscene": 1,
+        "setactors": 1,
+        "setoverlay": 1,
+        "consentmoment": 1,
+        "advance": 1
+      },
+      "soctrack": [],
+      "choice_points": [],
+      "consent_moments": [
+        {
+          "id": "PostChase_decline",
+          "stat": "fangTrust",
+          "delta": "-5",
+          "chat_register": "Fang said I held. I told her not to make it a thing.",
+          "offered": [
+            "i had your back, you had mine",
+            "keep moving",
+            "don’t make it a thing"
+          ],
+          "chosen": "don’t make it a thing"
+        }
+      ],
+      "music_cues": [],
+      "links_in": [
+        "VD.212.mostor.entrance.fang_ack"
+      ]
+    },
+    {
+      "pid": 14,
+      "name": "VD.220.mostor.main.arrival",
+      "tags": [
+        "nobr",
+        "porright"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 212812,
+      "embedded_media": 1,
+      "links_out": [
+        "VD.230.mostor.main.tea"
+      ],
+      "macros": {
+        "sceneprose": 7,
+        "chatpush": 3,
+        "soundprompt": 2,
+        "setchat": 1,
+        "setheader": 1,
+        "setscene": 1,
+        "setactors": 1,
+        "soctrack": 1,
+        "unlocksurface": 1,
+        "partyjoin": 1,
+        "artprompt": 1,
+        "music": 1,
+        "advance": 1
+      },
+      "soctrack": [
+        {
+          "event": "scene_enter",
+          "detail": "MoStor_Arrival"
+        }
+      ],
+      "choice_points": [],
+      "consent_moments": [],
+      "music_cues": [
+        [
+          "Irish Washerwoman",
+          "traditional Irish jig played soft and low by Marcus"
+        ]
+      ],
+      "links_in": [
+        "VD.210.mostor.entrance.descent",
+        "VD.213.mostor.entrance.fang_ack_reciprocate",
+        "VD.214.mostor.entrance.fang_ack_deflect",
+        "VD.215.mostor.entrance.fang_ack_decline"
+      ]
+    },
+    {
+      "pid": 15,
+      "name": "VD.230.mostor.main.tea",
+      "tags": [
+        "nobr",
+        "porright"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 205912,
+      "embedded_media": 1,
+      "links_out": [
+        "VD.240.mostor.main.wait"
+      ],
+      "macros": {
+        "sceneprose": 9,
+        "setchat": 1,
+        "setheader": 1,
+        "setscene": 1,
+        "setactors": 1,
+        "soctrack": 1,
+        "music": 1,
+        "artprompt": 1,
+        "if": 1,
+        "else": 1,
+        "set": 1,
+        "advance": 1
+      },
+      "soctrack": [
+        {
+          "event": "scene_enter",
+          "detail": "MoStor_Tea"
+        }
+      ],
+      "choice_points": [],
+      "consent_moments": [],
+      "music_cues": [
+        [
+          "Irish Washerwoman",
+          "traditional Irish jig played soft and low by Marcus · continues"
+        ]
+      ],
+      "links_in": [
+        "VD.220.mostor.main.arrival"
+      ]
+    },
+    {
+      "pid": 16,
+      "name": "VD.240.mostor.main.wait",
+      "tags": [
+        "nobr",
+        "porright"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 204860,
+      "embedded_media": 1,
+      "links_out": [
+        "VD.250.mostor.main.unfinished"
+      ],
+      "macros": {
+        "sceneprose": 5,
+        "setchat": 1,
+        "setheader": 1,
+        "setscene": 1,
+        "setactors": 1,
+        "soctrack": 1,
+        "music": 1,
+        "artprompt": 1,
+        "soundprompt": 1,
+        "deflectintent": 1,
+        "sceneadvance": 1
+      },
+      "soctrack": [
+        {
+          "event": "scene_enter",
+          "detail": "MoStor_Wait"
+        }
+      ],
+      "choice_points": [],
+      "consent_moments": [],
+      "music_cues": [
+        [
+          "Irish Washerwoman",
+          "traditional Irish jig played soft and low by Marcus · continues"
+        ]
+      ],
+      "links_in": [
+        "VD.230.mostor.main.tea"
+      ]
+    },
+    {
+      "pid": 17,
+      "name": "VD.250.mostor.main.unfinished",
+      "tags": [
+        "nobr",
+        "porright"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 204967,
+      "embedded_media": 1,
+      "links_out": [
+        "VD.251.mostor.main.unfinished_press",
+        "VD.252.mostor.main.unfinished_name",
+        "VD.260.mostor.main.lawrence_arrives"
+      ],
+      "macros": {
+        "sceneprose": 4,
+        "chasechoice": 3,
+        "setchat": 1,
+        "setheader": 1,
+        "setscene": 1,
+        "setactors": 1,
+        "music": 1,
+        "whisperreply": 1
+      },
+      "soctrack": [],
+      "choice_points": [
+        {
+          "macro": "chasechoice",
+          "style": "aggressive",
+          "stat": "",
+          "label": "\"That's not an answer.\"",
+          "target": "VD.251.mostor.main.unfinished_press",
+          "in_place": false
+        },
+        {
+          "macro": "chasechoice",
+          "style": "tactical",
+          "stat": "",
+          "label": "(nod. don't press. drink the tea.)",
+          "target": "VD.260.mostor.main.lawrence_arrives",
+          "in_place": false
+        },
+        {
+          "macro": "chasechoice",
+          "style": "trickster",
+          "stat": "",
+          "label": "(nice weather, isn't it, Fang?)",
+          "target": "VD.252.mostor.main.unfinished_name",
+          "in_place": false
+        }
+      ],
+      "consent_moments": [],
+      "music_cues": [
+        [
+          "Irish Washerwoman",
+          "traditional Irish jig played soft and low by Marcus · continues"
+        ]
+      ],
+      "links_in": [
+        "VD.240.mostor.main.wait"
+      ]
+    },
+    {
+      "pid": 18,
+      "name": "VD.251.mostor.main.unfinished_press",
+      "tags": [
+        "nobr",
+        "porright"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 203941,
+      "embedded_media": 1,
+      "links_out": [
+        "VD.260.mostor.main.lawrence_arrives"
+      ],
+      "macros": {
+        "sceneprose": 3,
+        "setchat": 1,
+        "setheader": 1,
+        "setscene": 1,
+        "setactors": 1,
+        "music": 1,
+        "setoverlay": 1,
+        "consentmoment": 1,
+        "journalentry": 1,
+        "sceneadvance": 1
+      },
+      "soctrack": [],
+      "choice_points": [],
+      "consent_moments": [
+        {
+          "id": "MoStor_press",
+          "stat": "fangTrust",
+          "delta": "0",
+          "chat_register": "Fang gave me an unfinished sentence. I told her it wasn't enough.",
+          "offered": [
+            "that’s not an answer",
+            "drink the tea, don’t press",
+            "you don’t have to tell me"
+          ],
+          "chosen": "that’s not an answer"
+        }
+      ],
+      "music_cues": [
+        [
+          "Irish Washerwoman",
+          "traditional Irish jig played soft and low by Marcus · continues"
+        ]
+      ],
+      "links_in": [
+        "VD.250.mostor.main.unfinished"
+      ]
+    },
+    {
+      "pid": 19,
+      "name": "VD.252.mostor.main.unfinished_name",
+      "tags": [
+        "nobr",
+        "porright"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 204247,
+      "embedded_media": 1,
+      "links_out": [
+        "VD.260.mostor.main.lawrence_arrives"
+      ],
+      "macros": {
+        "sceneprose": 4,
+        "setchat": 1,
+        "setheader": 1,
+        "setscene": 1,
+        "setactors": 1,
+        "music": 1,
+        "setoverlay": 1,
+        "consentmoment": 1,
+        "journalentry": 1,
+        "soundprompt": 1,
+        "sceneadvance": 1
+      },
+      "soctrack": [],
+      "choice_points": [],
+      "consent_moments": [
+        {
+          "id": "MoStor_name",
+          "stat": "fangTrust",
+          "delta": "10",
+          "chat_register": "Fang gave me an unfinished sentence. I told her she didn't have to finish it.",
+          "offered": [
+            "that’s not an answer",
+            "drink the tea, don’t press",
+            "you don’t have to tell me"
+          ],
+          "chosen": "you don’t have to tell me"
+        }
+      ],
+      "music_cues": [
+        [
+          "Irish Washerwoman",
+          "traditional Irish jig played soft and low by Marcus · continues"
+        ]
+      ],
+      "links_in": [
+        "VD.250.mostor.main.unfinished"
+      ]
+    },
+    {
+      "pid": 20,
+      "name": "VD.260.mostor.main.lawrence_arrives",
+      "tags": [
+        "nobr",
+        "porright"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 205003,
+      "embedded_media": 1,
+      "links_out": [
+        "VD.270.mostor.backroom.door"
+      ],
+      "macros": {
+        "sceneprose": 5,
+        "setchat": 1,
+        "setheader": 1,
+        "setscene": 1,
+        "setactors": 1,
+        "soctrack": 1,
+        "music": 1,
+        "partyjoin": 1,
+        "artprompt": 1,
+        "soundprompt": 1,
+        "advance": 1
+      },
+      "soctrack": [
+        {
+          "event": "scene_enter",
+          "detail": "MoStor_Briefing"
+        }
+      ],
+      "choice_points": [],
+      "consent_moments": [],
+      "music_cues": [
+        [
+          "White Night",
+          "Forestella"
+        ]
+      ],
+      "links_in": [
+        "LS.010_LoadScreen",
+        "VD.250.mostor.main.unfinished",
+        "VD.251.mostor.main.unfinished_press",
+        "VD.252.mostor.main.unfinished_name"
+      ]
+    },
+    {
+      "pid": 21,
+      "name": "VD.270.mostor.backroom.door",
+      "tags": [
+        "nobr",
+        "porright"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 203379,
+      "embedded_media": 1,
+      "links_out": [
+        "VD.999.credits.end.main"
+      ],
+      "macros": {
+        "setchat": 1,
+        "setheader": 1,
+        "setscene": 1,
+        "setactors": 1,
+        "soctrack": 1,
+        "advance": 1
+      },
+      "soctrack": [
+        {
+          "event": "scene_enter",
+          "detail": "VD.270.mostor.backroom.door"
+        }
+      ],
+      "choice_points": [],
+      "consent_moments": [],
+      "music_cues": [],
+      "links_in": [
+        "VD.260.mostor.main.lawrence_arrives"
+      ]
+    },
+    {
+      "pid": 22,
+      "name": "VD.020.outside_smyrna.raid.scent2",
+      "tags": [
+        "nobr"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 4147,
+      "embedded_media": 0,
+      "links_out": [
+        "VD.030.outside_smyrna.raid.crest"
+      ],
+      "macros": {
+        "sceneprose": 4,
+        "setheader": 1,
+        "setscene": 1,
+        "music": 1,
+        "setactors": 1,
+        "soctrack": 1,
+        "set": 1,
+        "advance": 1
+      },
+      "soctrack": [
+        {
+          "event": "scene_enter",
+          "detail": "VD.020.outside_smyrna.raid.scent2"
+        }
+      ],
+      "choice_points": [],
+      "consent_moments": [],
+      "music_cues": [
+        [
+          "",
+          ""
+        ]
+      ],
+      "links_in": [
+        "VD.010.outside_smyrna.raid.road"
+      ]
+    },
+    {
+      "pid": 23,
+      "name": "VD.022.outside_smyrna.raid.watch",
+      "tags": [
+        "nobr"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 5539,
+      "embedded_media": 0,
+      "links_out": [
+        "VD.030.outside_smyrna.raid.crest"
+      ],
+      "macros": {
+        "set": 8,
+        "sceneprose": 7,
+        "chasechoice": 3,
+        "setheader": 1,
+        "setscene": 1,
+        "music": 1,
+        "setactors": 1,
+        "soctrack": 1,
+        "moveactor": 1,
+        "advance": 1
+      },
+      "soctrack": [
+        {
+          "event": "scene_enter",
+          "detail": "VD.022.outside_smyrna.raid.watch"
+        }
+      ],
+      "choice_points": [
+        {
+          "macro": "chasechoice",
+          "style": "protective",
+          "stat": "flow",
+          "label": "Tell her. Now.",
+          "target": null,
+          "in_place": true
+        },
+        {
+          "macro": "chasechoice",
+          "style": "tactical",
+          "stat": "flow",
+          "label": "Keep watching. She gave you the rock; give her the slope.",
+          "target": null,
+          "in_place": true
+        },
+        {
+          "macro": "chasechoice",
+          "style": "trickster",
+          "stat": "flow",
+          "label": "Test him. Let your hand drift to your blade and see if he reacts.",
+          "target": null,
+          "in_place": true
+        }
+      ],
+      "consent_moments": [],
+      "music_cues": [
+        [
+          "",
+          ""
+        ]
+      ],
+      "links_in": [
+        "VD.010.outside_smyrna.raid.road"
+      ]
+    },
+    {
+      "pid": 24,
+      "name": "VD.025.outside_smyrna.raid.halt",
+      "tags": [
+        "nobr"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 5439,
+      "embedded_media": 0,
+      "links_out": [
+        "VD.030.outside_smyrna.raid.crest"
+      ],
+      "macros": {
+        "sceneprose": 8,
+        "set": 4,
+        "chasechoice": 3,
+        "setheader": 1,
+        "setscene": 1,
+        "music": 1,
+        "setactors": 1,
+        "soctrack": 1,
+        "advance": 1
+      },
+      "soctrack": [
+        {
+          "event": "scene_enter",
+          "detail": "VD.025.outside_smyrna.raid.halt"
+        }
+      ],
+      "choice_points": [
+        {
+          "macro": "chasechoice",
+          "style": "protective",
+          "stat": "flow",
+          "label": "Stand with the animals. The herders are the ones who cannot fight.",
+          "target": null,
+          "in_place": true
+        },
+        {
+          "macro": "chasechoice",
+          "style": "tactical",
+          "stat": "flow",
+          "label": "Get back to Fang. She saw it first; she will see it coming.",
+          "target": null,
+          "in_place": true
+        },
+        {
+          "macro": "chasechoice",
+          "style": "trickster",
+          "stat": "flow",
+          "label": "Find scree. If it comes, you want something to throw before it reaches you.",
+          "target": null,
+          "in_place": true
+        }
+      ],
+      "consent_moments": [],
+      "music_cues": [
+        [
+          "",
+          ""
+        ]
+      ],
+      "links_in": [
+        "VD.010.outside_smyrna.raid.road"
+      ]
+    },
+    {
+      "pid": 25,
+      "name": "VD.030.outside_smyrna.raid.crest",
+      "tags": [
+        "nobr"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 9424,
+      "embedded_media": 0,
+      "links_out": [
+        "VD.045.outside_smyrna.raid.spark"
+      ],
+      "macros": {
+        "sceneprose": 8,
+        "if": 2,
+        "setactors": 2,
+        "else": 2,
+        "setheader": 1,
+        "setscene": 1,
+        "music": 1,
+        "soctrack": 1,
+        "setchat": 1,
+        "elseif": 1,
+        "advance": 1
+      },
+      "soctrack": [
+        {
+          "event": "scene_enter",
+          "detail": "VD.030.outside_smyrna.raid.crest"
+        }
+      ],
+      "choice_points": [],
+      "consent_moments": [],
+      "music_cues": [
+        [
+          "",
+          ""
+        ]
+      ],
+      "links_in": [
+        "VD.020.outside_smyrna.raid.scent2",
+        "VD.022.outside_smyrna.raid.watch",
+        "VD.025.outside_smyrna.raid.halt"
+      ]
+    },
+    {
+      "pid": 26,
+      "name": "VD.045.outside_smyrna.raid.spark",
+      "tags": [
+        "nobr"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 7106,
+      "embedded_media": 0,
+      "links_out": [
+        "VD.050.outside_smyrna.raid.merchant"
+      ],
+      "macros": {
+        "sceneprose": 11,
+        "chasechoice": 2,
+        "setheader": 1,
+        "setscene": 1,
+        "music": 1,
+        "setactors": 1,
+        "soctrack": 1,
+        "advance": 1
+      },
+      "soctrack": [
+        {
+          "event": "scene_enter",
+          "detail": "VD.045.outside_smyrna.raid.spark"
+        }
+      ],
+      "choice_points": [
+        {
+          "macro": "chasechoice",
+          "style": "tactical+trickster",
+          "stat": "flow",
+          "label": "Reach for the scree. Put the camel between the vampire and the merchant.",
+          "target": null,
+          "in_place": true
+        },
+        {
+          "macro": "chasechoice",
+          "style": "protective",
+          "stat": "flow",
+          "label": "Get your body between the merchant and the vampire.",
+          "target": null,
+          "in_place": true
+        }
+      ],
+      "consent_moments": [],
+      "music_cues": [
+        [
+          "",
+          ""
+        ]
+      ],
+      "links_in": [
+        "VD.030.outside_smyrna.raid.crest"
+      ]
+    },
+    {
+      "pid": 27,
+      "name": "VD.050.outside_smyrna.raid.merchant",
+      "tags": [
+        "nobr"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 5128,
+      "embedded_media": 0,
+      "links_out": [
+        "VD.060.outside_smyrna.raid.falls"
+      ],
+      "macros": {
+        "sceneprose": 6,
+        "setheader": 1,
+        "setscene": 1,
+        "music": 1,
+        "setactors": 1,
+        "soctrack": 1,
+        "advance": 1
+      },
+      "soctrack": [
+        {
+          "event": "scene_enter",
+          "detail": "VD.050.outside_smyrna.raid.merchant"
+        }
+      ],
+      "choice_points": [],
+      "consent_moments": [],
+      "music_cues": [
+        [
+          "",
+          ""
+        ]
+      ],
+      "links_in": [
+        "VD.045.outside_smyrna.raid.spark"
+      ]
+    },
+    {
+      "pid": 28,
+      "name": "VD.060.outside_smyrna.raid.falls",
+      "tags": [
+        "nobr"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 6323,
+      "embedded_media": 0,
+      "links_out": [
+        "VD.090.outside_smyrna.raid.outcropping"
+      ],
+      "macros": {
+        "sceneprose": 4,
+        "setheader": 1,
+        "setscene": 1,
+        "music": 1,
+        "setactors": 1,
+        "soctrack": 1,
+        "advance": 1
+      },
+      "soctrack": [
+        {
+          "event": "scene_enter",
+          "detail": "VD.060.outside_smyrna.raid.falls"
+        }
+      ],
+      "choice_points": [],
+      "consent_moments": [],
+      "music_cues": [
+        [
+          "Alone With Tears",
+          "Forestella"
+        ]
+      ],
+      "links_in": [
+        "VD.050.outside_smyrna.raid.merchant"
+      ]
+    },
+    {
+      "pid": 29,
+      "name": "VD.090.outside_smyrna.raid.outcropping",
+      "tags": [
+        "nobr"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 7906,
+      "embedded_media": 0,
+      "links_out": [
+        "VD.100.ishani_apartment.kitchen.reveal"
+      ],
+      "macros": {
+        "sceneprose": 9,
+        "setheader": 1,
+        "setscene": 1,
+        "music": 1,
+        "setactors": 1,
+        "soctrack": 1,
+        "advance": 1
+      },
+      "soctrack": [
+        {
+          "event": "scene_enter",
+          "detail": "VD.090.outside_smyrna.raid.outcropping"
+        }
+      ],
+      "choice_points": [],
+      "consent_moments": [],
+      "music_cues": [
+        [
+          "",
+          ""
+        ]
+      ],
+      "links_in": [
+        "VD.060.outside_smyrna.raid.falls"
+      ]
+    },
+    {
+      "pid": 30,
+      "name": "VD.100.ishani_apartment.kitchen.reveal",
+      "tags": [
+        "nobr"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 3041,
+      "embedded_media": 0,
+      "links_out": [
+        "VD.105.smyrna.han_departure.leaving",
+        "VD.900.mostor.hub.main"
+      ],
+      "macros": {
+        "chatpush": 7,
+        "soctrack": 3,
+        "link": 2,
+        "set": 2,
+        "setchat": 1,
+        "settab": 1,
+        "setheader": 1,
+        "setscene": 1,
+        "setactors": 1,
+        "artprompt": 1,
+        "soundprompt": 1,
+        "music": 1,
+        "goto": 1
+      },
+      "soctrack": [
+        {
+          "event": "scene_enter",
+          "detail": "VD.100.ishani_apartment.kitchen.reveal"
+        },
+        {
+          "event": "kitchen_continue",
+          "detail": null
+        },
+        {
+          "event": "hub_rest",
+          "detail": "ch1_kitchen"
+        }
+      ],
+      "choice_points": [],
+      "consent_moments": [],
+      "music_cues": [
+        [
+          "Ghost Town",
+          "Chen &amp; Hwe Seung · continues"
+        ]
+      ],
+      "links_in": [
+        "LS.010_LoadScreen",
+        "VD.090.outside_smyrna.raid.outcropping",
+        "VD.900.mostor.hub.main"
+      ]
+    },
+    {
+      "pid": 31,
+      "name": "VD.999.credits.end.main",
+      "tags": [
+        "nobr"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 11136,
+      "embedded_media": 0,
+      "links_out": [],
+      "macros": {
+        "set": 28,
+        "if": 19,
+        "elseif": 9,
+        "else": 5,
+        "setheader": 1,
+        "soctrack": 1,
+        "silently": 1,
+        "journalentry": 1,
+        "socexitsurvey": 1,
+        "link": 1
+      },
+      "soctrack": [
+        {
+          "event": "session_complete",
+          "detail": null,
+          "from_script": true
+        },
+        {
+          "event": "credits_replay",
+          "detail": null,
+          "from_script": true
+        },
+        {
+          "event": "scene_enter",
+          "detail": "VD.999.credits.end.main"
+        }
+      ],
+      "choice_points": [],
+      "consent_moments": [],
+      "music_cues": [],
+      "links_in": [
+        "VD.200.mostor.mostorThreshold.enter",
+        "VD.270.mostor.backroom.door"
+      ]
+    },
+    {
+      "pid": 32,
+      "name": "VD.200.mostor.mostorThreshold.enter",
+      "tags": [
+        "nobr"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 1746,
+      "embedded_media": 0,
+      "links_out": [
+        "VD.999.credits.end.main"
+      ],
+      "macros": {
+        "set": 2,
+        "setchat": 1,
+        "setheader": 1,
+        "setscene": 1,
+        "setactors": 1,
+        "setoverlay": 1,
+        "soctrack": 1,
+        "music": 1,
+        "journalentry": 1,
+        "advance": 1
+      },
+      "soctrack": [
+        {
+          "event": "scene_enter",
+          "detail": "VD.200.mostor.mostorThreshold.enter"
+        }
+      ],
+      "choice_points": [],
+      "consent_moments": [],
+      "music_cues": [
+        [
+          "TOXIC",
+          "MEOVV · continues"
+        ]
+      ],
+      "links_in": []
+    },
+    {
+      "pid": 33,
+      "name": "VD.900.mostor.hub.main",
+      "tags": [
+        "nobr",
+        "porright"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 206370,
+      "embedded_media": 1,
+      "links_out": [
+        "VD.000.vd_loadscreen",
+        "VD.010.outside_smyrna.raid.road",
+        "VD.100.ishani_apartment.kitchen.reveal"
+      ],
+      "macros": {
+        "sceneprose": 4,
+        "link": 3,
+        "goto": 3,
+        "set": 2,
+        "setchat": 1,
+        "setheader": 1,
+        "setscene": 1,
+        "setactors": 1,
+        "soctrack": 1,
+        "music": 1,
+        "if": 1,
+        "else": 1
+      },
+      "soctrack": [
+        {
+          "event": "scene_enter",
+          "detail": "VD.900.mostor.hub.main"
+        }
+      ],
+      "choice_points": [],
+      "consent_moments": [],
+      "music_cues": [
+        [
+          "Nella Notte",
+          "Forestella · acoustic instrumental (hub arrangement) · continues"
+        ]
+      ],
+      "links_in": [
+        "VD.000.vd_loadscreen",
+        "VD.100.ishani_apartment.kitchen.reveal"
+      ]
+    },
+    {
+      "pid": 34,
+      "name": "LS.010_LoadScreen",
+      "tags": [
+        "loader-root",
+        "nobr"
+      ],
+      "is_start": true,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 6841,
+      "embedded_media": 0,
+      "links_out": [
+        "VD.000.vd_loadscreen",
+        "VD.001.netloom_cinematic",
+        "VD.001e.ishani_room",
+        "VD.010.outside_smyrna.raid.road",
+        "VD.100.ishani_apartment.kitchen.reveal",
+        "VD.105.smyrna.han_departure.leaving",
+        "VD.210.mostor.entrance.descent",
+        "VD.260.mostor.main.lawrence_arrives"
+      ],
+      "macros": {
+        "soctrack": 16,
+        "link": 12,
+        "set": 5
+      },
+      "soctrack": [
+        {
+          "event": "desire_safe",
+          "detail": null
+        },
+        {
+          "event": "loader_begin",
+          "detail": null
+        },
+        {
+          "event": "desire_finish",
+          "detail": null
+        },
+        {
+          "event": "loader_begin",
+          "detail": null
+        },
+        {
+          "event": "desire_matter",
+          "detail": null
+        },
+        {
+          "event": "loader_begin",
+          "detail": null
+        },
+        {
+          "event": "desire_refused",
+          "detail": null
+        },
+        {
+          "event": "loader_begin",
+          "detail": null
+        },
+        {
+          "event": "loader_jump",
+          "detail": "workroom"
+        },
+        {
+          "event": "loader_jump",
+          "detail": "ishani_apartment"
+        },
+        {
+          "event": "loader_jump",
+          "detail": "start_screen"
+        },
+        {
+          "event": "loader_jump",
+          "detail": "road_to_smyrna"
+        },
+        {
+          "event": "loader_jump",
+          "detail": "kitchen_table"
+        },
+        {
+          "event": "loader_jump",
+          "detail": "leaving_the_han"
+        },
+        {
+          "event": "loader_jump",
+          "detail": "mo_stor"
+        },
+        {
+          "event": "loader_jump",
+          "detail": "lawrence_arrives"
+        }
+      ],
+      "choice_points": [],
+      "consent_moments": [],
+      "music_cues": [],
+      "links_in": [
+        "LS.020_ReviewJournal"
+      ]
+    },
+    {
+      "pid": 35,
+      "name": "VD.000.vd_loadscreen",
+      "tags": [
+        "loader-root",
+        "nobr"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 71590,
+      "embedded_media": 2,
+      "links_out": [
+        "VD.010.outside_smyrna.raid.road",
+        "VD.900.mostor.hub.main"
+      ],
+      "macros": {
+        "set": 4,
+        "if": 2,
+        "chatpush": 2,
+        "else": 2,
+        "goto": 2,
+        "setchat": 1,
+        "settab": 1,
+        "run": 1,
+        "guildreply": 1,
+        "textbox": 1,
+        "link": 1,
+        "soctrack": 1,
+        "journalentry": 1
+      },
+      "soctrack": [
+        {
+          "event": "vd_begin",
+          "detail": null
+        }
+      ],
+      "choice_points": [],
+      "consent_moments": [],
+      "music_cues": [],
+      "links_in": [
+        "LS.010_LoadScreen",
+        "VD.001h.ishani_game",
+        "VD.900.mostor.hub.main"
+      ]
+    },
+    {
+      "pid": 36,
+      "name": "VD.001.netloom_cinematic",
+      "tags": [
+        "loader-root",
+        "nobr",
+        "cine"
+      ],
+      "is_start": false,
+      "is_cinematic": true,
+      "is_special": false,
+      "bytes": 3459,
+      "embedded_media": 0,
+      "links_out": [
+        "VD.001b.netloom_keunjeol"
+      ],
+      "macros": {
+        "sceneprose": 2,
+        "setchat": 1,
+        "setheader": 1,
+        "setscene": 1,
+        "setactors": 1,
+        "music": 1,
+        "soctrack": 1,
+        "advance": 1
+      },
+      "soctrack": [
+        {
+          "event": "scene_enter",
+          "detail": "VD.001.netloom_cinematic"
+        }
+      ],
+      "choice_points": [],
+      "consent_moments": [],
+      "music_cues": [
+        [
+          "",
+          ""
+        ]
+      ],
+      "links_in": [
+        "LS.010_LoadScreen"
+      ]
+    },
+    {
+      "pid": 37,
+      "name": "VD.001b.netloom_keunjeol",
+      "tags": [
+        "loader-root",
+        "nobr",
+        "cine"
+      ],
+      "is_start": false,
+      "is_cinematic": true,
+      "is_special": false,
+      "bytes": 5595,
+      "embedded_media": 0,
+      "links_out": [
+        "VD.001c.netloom_assessment"
+      ],
+      "macros": {
+        "sceneprose": 4,
+        "setheader": 1,
+        "setscene": 1,
+        "setactors": 1,
+        "soctrack": 1,
+        "advance": 1
+      },
+      "soctrack": [
+        {
+          "event": "scene_enter",
+          "detail": "VD.001b.netloom_keunjeol"
+        }
+      ],
+      "choice_points": [],
+      "consent_moments": [],
+      "music_cues": [],
+      "links_in": [
+        "VD.001.netloom_cinematic"
+      ]
+    },
+    {
+      "pid": 38,
+      "name": "VD.001c.netloom_assessment",
+      "tags": [
+        "loader-root",
+        "nobr",
+        "cine"
+      ],
+      "is_start": false,
+      "is_cinematic": true,
+      "is_special": false,
+      "bytes": 4577,
+      "embedded_media": 0,
+      "links_out": [
+        "VD.001d.netloom_dismissal"
+      ],
+      "macros": {
+        "sceneprose": 4,
+        "setheader": 1,
+        "setscene": 1,
+        "setactors": 1,
+        "soctrack": 1,
+        "advance": 1
+      },
+      "soctrack": [
+        {
+          "event": "scene_enter",
+          "detail": "VD.001c.netloom_assessment"
+        }
+      ],
+      "choice_points": [],
+      "consent_moments": [],
+      "music_cues": [],
+      "links_in": [
+        "VD.001b.netloom_keunjeol"
+      ]
+    },
+    {
+      "pid": 39,
+      "name": "VD.001d.netloom_dismissal",
+      "tags": [
+        "loader-root",
+        "nobr",
+        "cine"
+      ],
+      "is_start": false,
+      "is_cinematic": true,
+      "is_special": false,
+      "bytes": 5158,
+      "embedded_media": 0,
+      "links_out": [
+        "VD.001e.ishani_room"
+      ],
+      "macros": {
+        "sceneprose": 2,
+        "setheader": 1,
+        "setscene": 1,
+        "setactors": 1,
+        "soctrack": 1,
+        "advance": 1
+      },
+      "soctrack": [
+        {
+          "event": "scene_enter",
+          "detail": "VD.001d.netloom_dismissal"
+        }
+      ],
+      "choice_points": [],
+      "consent_moments": [],
+      "music_cues": [],
+      "links_in": [
+        "VD.001c.netloom_assessment"
+      ]
+    },
+    {
+      "pid": 40,
+      "name": "VD.001e.ishani_room",
+      "tags": [
+        "loader-root",
+        "nobr",
+        "cine"
+      ],
+      "is_start": false,
+      "is_cinematic": true,
+      "is_special": false,
+      "bytes": 190303,
+      "embedded_media": 2,
+      "links_out": [
+        "VD.001f.ishani_sits"
+      ],
+      "macros": {
+        "setchat": 1,
+        "setheader": 1,
+        "setscene": 1,
+        "setactors": 1,
+        "soctrack": 1,
+        "sceneprose": 1,
+        "advance": 1
+      },
+      "soctrack": [
+        {
+          "event": "scene_enter",
+          "detail": "VD.001e.ishani_room"
+        }
+      ],
+      "choice_points": [],
+      "consent_moments": [],
+      "music_cues": [],
+      "links_in": [
+        "LS.010_LoadScreen",
+        "VD.001d.netloom_dismissal"
+      ]
+    },
+    {
+      "pid": 41,
+      "name": "VD.001f.ishani_sits",
+      "tags": [
+        "loader-root",
+        "nobr",
+        "cine"
+      ],
+      "is_start": false,
+      "is_cinematic": true,
+      "is_special": false,
+      "bytes": 204123,
+      "embedded_media": 2,
+      "links_out": [
+        "VD.001g.ishani_potato"
+      ],
+      "macros": {
+        "setchat": 1,
+        "setheader": 1,
+        "setscene": 1,
+        "setactors": 1,
+        "soctrack": 1,
+        "sceneprose": 1,
+        "advance": 1
+      },
+      "soctrack": [
+        {
+          "event": "scene_enter",
+          "detail": "VD.001f.ishani_sits"
+        }
+      ],
+      "choice_points": [],
+      "consent_moments": [],
+      "music_cues": [],
+      "links_in": [
+        "VD.001e.ishani_room"
+      ]
+    },
+    {
+      "pid": 42,
+      "name": "VD.001g.ishani_potato",
+      "tags": [
+        "loader-root",
+        "nobr",
+        "cine"
+      ],
+      "is_start": false,
+      "is_cinematic": true,
+      "is_special": false,
+      "bytes": 203461,
+      "embedded_media": 2,
+      "links_out": [
+        "VD.001h.ishani_game"
+      ],
+      "macros": {
+        "setchat": 1,
+        "setheader": 1,
+        "setscene": 1,
+        "setactors": 1,
+        "soctrack": 1,
+        "sceneprose": 1,
+        "advance": 1
+      },
+      "soctrack": [
+        {
+          "event": "scene_enter",
+          "detail": "VD.001g.ishani_potato"
+        }
+      ],
+      "choice_points": [],
+      "consent_moments": [],
+      "music_cues": [],
+      "links_in": [
+        "VD.001f.ishani_sits"
+      ]
+    },
+    {
+      "pid": 43,
+      "name": "VD.001h.ishani_game",
+      "tags": [
+        "loader-root",
+        "nobr",
+        "cine"
+      ],
+      "is_start": false,
+      "is_cinematic": true,
+      "is_special": false,
+      "bytes": 1145538,
+      "embedded_media": 4,
+      "links_out": [
+        "VD.000.vd_loadscreen"
+      ],
+      "macros": {
+        "setchat": 1,
+        "setheader": 1,
+        "setscene": 1,
+        "setactors": 1,
+        "soctrack": 1,
+        "advance": 1
+      },
+      "soctrack": [
+        {
+          "event": "scene_enter",
+          "detail": "VD.001h.ishani_game"
+        }
+      ],
+      "choice_points": [],
+      "consent_moments": [],
+      "music_cues": [],
+      "links_in": [
+        "VD.001g.ishani_potato"
+      ]
+    },
+    {
+      "pid": 44,
+      "name": "LS.020_ReviewJournal",
+      "tags": [
+        "loader-root",
+        "nobr"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 179,
+      "embedded_media": 0,
+      "links_out": [
+        "LS.010_LoadScreen"
+      ],
+      "macros": {
+        "setchat": 1,
+        "link": 1
+      },
+      "soctrack": [],
+      "choice_points": [],
+      "consent_moments": [],
+      "music_cues": [],
+      "links_in": []
+    },
+    {
+      "pid": 45,
+      "name": "OneRing_Demo",
+      "tags": [
+        "nobr"
+      ],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": false,
+      "bytes": 692,
+      "embedded_media": 0,
+      "links_out": [],
+      "macros": {
+        "setchat": 1,
+        "setheader": 1,
+        "setscene": 1,
+        "soctrack": 1,
+        "onering": 1
+      },
+      "soctrack": [
+        {
+          "event": "scene_enter",
+          "detail": "OneRing_Demo"
+        }
+      ],
+      "choice_points": [],
+      "consent_moments": [],
+      "music_cues": [],
+      "links_in": []
+    },
+    {
+      "pid": 46,
+      "name": "StoryInit",
+      "tags": [],
+      "is_start": false,
+      "is_cinematic": false,
+      "is_special": true,
+      "bytes": 4817,
+      "embedded_media": 0,
+      "links_out": [],
+      "macros": {
+        "set": 85
+      },
+      "soctrack": [],
+      "choice_points": [],
+      "consent_moments": [],
+      "music_cues": [],
+      "links_in": []
+    }
+  ],
+  "audit": [
+    {
+      "severity": "high",
+      "code": "no_scene_enter",
+      "message": "Passages with no <<soctrack \"scene_enter\">>: drop-off and dwell are invisible here unless a generic passage event is added.",
+      "items": [
+        "VD.010.outside_smyrna.raid.road",
+        "VD.213.mostor.entrance.fang_ack_reciprocate",
+        "VD.214.mostor.entrance.fang_ack_deflect",
+        "VD.215.mostor.entrance.fang_ack_decline",
+        "VD.250.mostor.main.unfinished",
+        "VD.251.mostor.main.unfinished_press",
+        "VD.252.mostor.main.unfinished_name",
+        "LS.010_LoadScreen",
+        "VD.000.vd_loadscreen",
+        "LS.020_ReviewJournal"
+      ]
+    },
+    {
+      "severity": "medium",
+      "code": "scene_enter_label_mismatch",
+      "message": "scene_enter detail differs from the passage name, so queries keyed on passage name will miss these.",
+      "items": [
+        "VD.212.mostor.entrance.fang_ack -> PostChase_FangAck",
+        "VD.220.mostor.main.arrival -> MoStor_Arrival",
+        "VD.230.mostor.main.tea -> MoStor_Tea",
+        "VD.240.mostor.main.wait -> MoStor_Wait",
+        "VD.260.mostor.main.lawrence_arrives -> MoStor_Briefing"
+      ]
+    },
+    {
+      "severity": "low",
+      "code": "no_inbound_links",
+      "message": "Passages nothing links to (may be reached by loader jumps, scripts, or be dead).",
+      "items": [
+        "VD.130.smyrna.chase.b3",
+        "VD.200.mostor.mostorThreshold.enter",
+        "LS.020_ReviewJournal",
+        "OneRing_Demo"
+      ]
+    },
+    {
+      "severity": "medium",
+      "code": "unwatched_stats_changing",
+      "message": "Relationship-style variables that change during play but are not in WATCHED_STATS, so changes go unlogged.",
+      "items": [
+        "ishaniMinjaeBond (changed in VD.110.smyrna.chase.b1, VD.250.mostor.main.unfinished)"
+      ]
+    },
+    {
+      "severity": "low",
+      "code": "unwatched_stats_static",
+      "message": "Relationship-style variables declared but never changed in this build; watch them before they start changing.",
+      "items": [
+        "chantInterruptCount",
+        "ishaniFangBond",
+        "ishaniJeffBond",
+        "lawrenceTrust",
+        "tibTellCount"
+      ]
+    },
+    {
+      "severity": "medium",
+      "code": "consent_payload_lossy",
+      "message": "consentmoment logs a single string ('id / stat=delta'); offered options, the chosen option and decline are not sent.",
+      "items": [
+        "PostChase_reciprocate",
+        "PostChase_deflect",
+        "PostChase_decline",
+        "MoStor_press",
+        "MoStor_name"
+      ]
+    },
+    {
+      "severity": "info",
+      "code": "macros_defined_not_used",
+      "message": "Macros defined in Story JavaScript but not called from any passage in this build.",
+      "items": [
+        "addactor",
+        "chapterend",
+        "chatbeat",
+        "chatpushlong",
+        "chatquiet",
+        "chemistrybeat",
+        "chipswap",
+        "combatevent",
+        "combatinit",
+        "combatturn",
+        "consumeintent",
+        "dlg",
+        "dockbreakvow",
+        "dockmenu",
+        "dockresolve",
+        "dockstage",
+        "dvstats",
+        "fadeoutactors",
+        "glimpse",
+        "guildpost",
+        "heartbeat",
+        "hubexit",
+        "journal",
+        "limitbreak",
+        "musictransition",
+        "npcintro",
+        "resolveintent",
+        "setchasedetail",
+        "setlocation",
+        "shake",
+        "swapactor",
+        "trustvetting",
+        "whisperafter"
+      ]
+    },
+    {
+      "severity": "info",
+      "code": "heavy_passages",
+      "message": "Passages over 150 KB (usually embedded base64 media); slow on mobile, worth an asset_load check.",
+      "items": [
+        "VD.220.mostor.main.arrival (207 KB)",
+        "VD.230.mostor.main.tea (201 KB)",
+        "VD.240.mostor.main.wait (200 KB)",
+        "VD.250.mostor.main.unfinished (200 KB)",
+        "VD.251.mostor.main.unfinished_press (199 KB)",
+        "VD.252.mostor.main.unfinished_name (199 KB)",
+        "VD.260.mostor.main.lawrence_arrives (200 KB)",
+        "VD.270.mostor.backroom.door (198 KB)",
+        "VD.900.mostor.hub.main (201 KB)",
+        "VD.001e.ishani_room (185 KB)",
+        "VD.001f.ishani_sits (199 KB)",
+        "VD.001g.ishani_potato (198 KB)",
+        "VD.001h.ishani_game (1118 KB)"
+      ]
+    }
+  ]
+}
